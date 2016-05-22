@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
+import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -29,7 +30,8 @@ public class MainActivity extends AppCompatActivity {
         webSettings.setJavaScriptEnabled(true);
         webSettings.setDomStorageEnabled(true);
         webSettings.setAppCacheEnabled(true);
-        webSettings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
+        webSettings.setAllowUniversalAccessFromFileURLs(true);
+        webSettings.setAllowFileAccessFromFileURLs(true);
 
         splashscreen = (RelativeLayout) findViewById(R.id.splashscreen);
 
@@ -41,9 +43,17 @@ public class MainActivity extends AppCompatActivity {
                 splashscreen.setVisibility(View.INVISIBLE); // When page is loaded, hide splashscreen
 
             }
+
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                return super.shouldOverrideUrlLoading(view, url);
+            }
         });
+
         webView.setVerticalScrollBarEnabled(false);
-        webView.loadUrl("file:///android_asset/demos/forms/index.html");
+
+        String url = "index.html";
+        webView.loadUrl("file:///android_asset/"+url);
 
     }
 
