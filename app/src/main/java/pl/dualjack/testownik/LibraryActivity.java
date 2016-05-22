@@ -6,26 +6,37 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.widget.*;
 
-import java.util.zip.Inflater;
+import java.util.ArrayList;
+import java.util.HashMap;
+
 
 public class LibraryActivity extends AppCompatActivity {
 
-    LinearLayout library;
-    LayoutInflater inflater;
+    LinearLayout libraryLayout;
+    HashMap<String,String> libraryItem;
+    ArrayList<HashMap<String,String>> library;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_library);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        library = (LinearLayout) findViewById(R.id.library);
+        libraryLayout = (LinearLayout) findViewById(R.id.library);
+
+        library = new ArrayList<>();
+
+        libraryItem = new HashMap<>();
+        libraryItem.put("title","Test tytułu");
+        libraryItem.put("desc","Test opisu");
+        libraryItem.put("id","Test id");
+
 
         for(int x=0; x<50; x++){
 
@@ -45,7 +56,7 @@ public class LibraryActivity extends AppCompatActivity {
                 }
             });
 
-            library.addView(item);
+            libraryLayout.addView(item);
 
         }
 
@@ -53,8 +64,9 @@ public class LibraryActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+
+
+
             }
         });
     }

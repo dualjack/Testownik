@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,8 +21,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
 
-                Intent nextScreen = new Intent(getApplicationContext(),LibraryActivity.class);
+                Intent nextScreen = new Intent(getApplicationContext(),WebViewActivity.class);
                 startActivity(nextScreen);
+                finish();   // close splashscreen ( main activity )
 
                 return false;
             }
