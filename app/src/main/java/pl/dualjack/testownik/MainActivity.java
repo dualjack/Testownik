@@ -28,20 +28,22 @@ public class MainActivity extends AppCompatActivity {
         webSettings.setBuiltInZoomControls(false);
         webSettings.setJavaScriptEnabled(true);
         webSettings.setDomStorageEnabled(true);
-
-        webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl("file:///android_asset/demos/pages-multi-page/index.html");
+        webSettings.setAppCacheEnabled(true);
+        webSettings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
 
         splashscreen = (RelativeLayout) findViewById(R.id.splashscreen);
-        splashscreen.setOnTouchListener(new View.OnTouchListener() {
+
+        webView.setWebViewClient(new WebViewClient(){
             @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
+            public void onPageFinished(WebView view, String url) {
+                super.onPageFinished(view, url);
 
-                splashscreen.setVisibility(View.INVISIBLE);
+                splashscreen.setVisibility(View.INVISIBLE); // When page is loaded, hide splashscreen
 
-                return false;
             }
         });
+        webView.setVerticalScrollBarEnabled(false);
+        webView.loadUrl("file:///android_asset/demos/forms/index.html");
 
     }
 
