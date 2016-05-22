@@ -26,7 +26,7 @@ public class WebViewActivity extends AppCompatActivity {
         webSettings.setDomStorageEnabled(true);
 
         webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl("http://google.com");
+        webView.loadUrl("file:///android_asset/index.html");
 
     }
 }
