@@ -4,11 +4,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        tools:context=".WebViewActivity">
+        tools:context=".MainActivity" android:id="@+id/container">
 
     <WebView
             android:layout_width="wrap_content"
@@ -16,4 +12,50 @@
             android:id="@+id/webView" android:layout_alignParentTop="true" android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true" android:layout_alignParentStart="true"/>
+
+    <RelativeLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#156783"
+            android:id="@+id/splashscreen">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Testownik"
+                android:id="@+id/textView"
+                android:textSize="50dp" android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:layout_below="@+id/textView2" android:layout_centerHorizontal="true"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Autor: Jakub Kuranda"
+                android:id="@+id/textView2"
+                android:textSize="15dp" android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:layout_marginTop="44dp"
+                android:layout_alignParentTop="true" android:layout_alignLeft="@+id/textView"
+                android:layout_alignStart="@+id/textView"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:textAppearance="?android:attr/textAppearanceSmall" android:text=" Tapnij aby rozpocząć"
+                  android:id="@+id/textView3"
+                  android:textSize="15dp" android:textColor="#ffffff"
+                  android:layout_alignParentBottom="true" android:layout_centerHorizontal="true"
+                  android:layout_marginBottom="37dp"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Wersja 1.3.69"
+                android:id="@+id/textView4"
+                android:textColor="#ffffff"
+                android:layout_below="@+id/textView" android:layout_alignRight="@+id/textView"
+                android:layout_alignEnd="@+id/textView"/>
+    </RelativeLayout>
+
 </RelativeLayout>
