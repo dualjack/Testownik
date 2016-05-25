@@ -4,22 +4,42 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Multi-page template</title>
+	<title>Testownik</title>
 	<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
 	<link rel="stylesheet" href="css/jqm-demos.css">
 	<script src="js/jquery.js"></script>
 	<script src="js/index.js"></script>
 	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+	<script src="js/jquery.md5.js"></script>
 </head>
 
 <body>
 
 <!-- Start of first page: #one -->
-<div data-role="page" id="one">
+<div data-role="page" id="page_login" class="ui-page-theme-a ui-page">
 
-	<a href="#" class="ui-btn ui-btn-b" id="load_tests">Załaduj listę testów</a>
-	<span>rezultat:</span>
-	<div id="response"></div>
+	<div data-role="header">
+		<h1 class="ui-title">Zaloguj się</h1>
+	</div>
+
+	<div class="ui-body">
+
+		<div></div>
+
+		<div class="ui-body ui-body-a">
+			<input type="text" id="mail" placeholder="Wprowadź mail">
+			<input type="password" id="pass" placeholder="Wprowadź hasło">
+			<a href="#page_list" id="login" class="ui-btn ui-btn-inline ui-btn-active ui-corner-all ui-shadow">Zaloguj</a>
+			<button class="ui-btn ui-btn-inline ui-corner-all ui-shadow" disabled="disabled">Utwórz konto</button>
+
+			<div class="ui-mini">Aktualnie możliwość rejestracji jest wyłączona</div>
+
+		</div>
+
+	</div>
+</div>
+
+<div data-role="page" id="page_list">
 
 </div>
 
