@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Testownik</title>
 	<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
-	<link rel="stylesheet" href="css/jqm-demos.css">
+	<link rel="stylesheet" href="css/style.css">
 	<script src="js/jquery.js"></script>
 	<script src="js/index.js"></script>
 	<script src="js/jquery.mobile-1.4.5.min.js"></script>
@@ -15,34 +15,70 @@
 
 <body>
 
-<!-- Start of first page: #one -->
-<div data-role="page" id="page_login" class="ui-page-theme-a ui-page">
+	<!-- page_login -->
+	<div data-role="page" id="page_login" class="ui-page">
 
-	<div data-role="header">
-		<h1 class="ui-title">Zaloguj się</h1>
+		<div data-role="header">
+			<h1 class="ui-title">Zaloguj się</h1>
+		</div>
+
+		<div class="ui-body">
+
+			<div class="ui-body ui-body-a">
+
+				<input type="text" id="mail" placeholder="Wprowadź mail">
+				<input type="password" id="pass" placeholder="Wprowadź hasło">
+				<button id="login" class="ui-btn ui-btn-inline ui-btn-active ui-corner-all ui-shadow">Zaloguj</button>
+				<button id="create_account" class="ui-btn ui-btn-inline ui-corner-all ui-shadow" disabled="disabled">Utwórz konto</button>
+
+				<div class="ui-mini">Aktualnie możliwość rejestracji jest wyłączona</div>
+				<div id="error" class="ui-mini error"></div>
+
+			</div>
+
+			<p><a href="#page_list">Pomiń logowanie (dev)</a></p>
+			<p><img src="img/otter.gif"></p>
+
+		</div>
 	</div>
 
-	<div class="ui-body">
+	<!-- page_list -->
+	<div data-role="page" id="page_list" class="ui-page">
 
-		<div class="ui-body ui-body-a">
+		<div data-role="header" class="ui-header">
+			<h1 class="ui-title">Lista testów</h1>
+			<button id="refresh" class="ui-btn ui-icon-refresh ui-btn-icon-notext ui-corner-all ui-btn-right">odśwież</button>
+		</div>
 
-			<input type="text" id="mail" placeholder="Wprowadź mail">
-			<input type="password" id="pass" placeholder="Wprowadź hasło">
-			<button id="login" class="ui-btn ui-btn-inline ui-btn-active ui-corner-all ui-shadow">Zaloguj</button>
-			<button id="create_account" class="ui-btn ui-btn-inline ui-corner-all ui-shadow" disabled="disabled">Utwórz konto</button>
+		<div class="ui-body">
+			
+			<div id="message_refresh" class="ui-body-a ui-body ui-corner-all">
+				<button id="refresh" class="ui-btn-active">Załaduj testy z serwera</button>
+				<p class="ui-mini">Wygląda na to, że nic tu nie ma. <br/> Zacznij przygodę od pobrania dostępnych testów :)</p>
 
-			<div class="ui-mini">Aktualnie możliwość rejestracji jest wyłączona</div>
+			</div>
+
+			<ul data-role="listview" data-filter="true" data-filter-placeholder="Szukaj..." data-inset="true">
+				<li>
+					<a href="#page_test">
+						hehehhe
+						<p class="ui-mini">Dodane w chuj dawno</p>
+					</a>
+				</li>
+				<li><a href="">headasd asde</a></li>
+				<li><a href="">heasd ada dhehhe</a></li>
+			</ul>
 
 		</div>
 
-		<p><a href="#page_list">Pomiń logowanie (dev)</a></p>
+	</div>
+
+	<!-- page_test -->
+	<div data-role="page" id="page_test">
+
+		
 
 	</div>
-</div>
-
-<div data-role="page" id="page_list">
-
-</div>
 
 </body>
 </html>
