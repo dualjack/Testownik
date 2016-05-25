@@ -11,6 +11,7 @@
 	<script src="js/index.js"></script>
 	<script src="js/jquery.mobile-1.4.5.min.js"></script>
 	<script src="js/jquery.md5.js"></script>
+	<script src="js/js.cookie.js"></script>
 </head>
 
 <body>
@@ -31,13 +32,15 @@
 				<button id="login" class="ui-btn ui-btn-inline ui-btn-active ui-corner-all ui-shadow">Zaloguj</button>
 				<button id="create_account" class="ui-btn ui-btn-inline ui-corner-all ui-shadow" disabled="disabled">Utwórz konto</button>
 
+				<select id="save_login" data-role="slider" data-mini="true" data-inline="true">
+				    <option value="off">Nie</option>
+				    <option value="on" selected="">Tak</option>
+				</select>
+
 				<div class="ui-mini">Aktualnie możliwość rejestracji jest wyłączona</div>
 				<div id="error" class="ui-mini error"></div>
 
 			</div>
-
-			<p><a href="#page_list">Pomiń logowanie (dev)</a></p>
-			<p><img src="img/otter.gif"></p>
 
 		</div>
 	</div>
@@ -51,23 +54,17 @@
 		</div>
 
 		<div class="ui-body">
-			
+
+			<ul id="tests_list" data-role="listview" data-filter="true" data-filter-placeholder="Szukaj..." data-inset="true">
+
+			</ul>
+
+			<div id="error" class="ui-mini error"></div>
+
 			<div id="message_refresh" class="ui-body-a ui-body ui-corner-all">
 				<button id="refresh" class="ui-btn-active">Załaduj testy z serwera</button>
 				<p class="ui-mini">Wygląda na to, że nic tu nie ma. <br/> Zacznij przygodę od pobrania dostępnych testów :)</p>
-
 			</div>
-
-			<ul data-role="listview" data-filter="true" data-filter-placeholder="Szukaj..." data-inset="true">
-				<li>
-					<a href="#page_test">
-						hehehhe
-						<p class="ui-mini">Dodane w chuj dawno</p>
-					</a>
-				</li>
-				<li><a href="">headasd asde</a></li>
-				<li><a href="">heasd ada dhehhe</a></li>
-			</ul>
 
 		</div>
 
@@ -76,7 +73,7 @@
 	<!-- page_test -->
 	<div data-role="page" id="page_test">
 
-		
+
 
 	</div>
 
