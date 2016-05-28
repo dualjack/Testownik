@@ -32,11 +32,6 @@
 				<button id="login" class="ui-btn ui-btn-inline ui-btn-active ui-corner-all ui-shadow">Zaloguj</button>
 				<button id="create_account" class="ui-btn ui-btn-inline ui-corner-all ui-shadow" disabled="disabled">Utwórz konto</button>
 
-				<select id="save_login" data-role="slider" data-mini="true" data-inline="true">
-				    <option value="off">Nie</option>
-				    <option value="on" selected="">Tak</option>
-				</select>
-
 				<div class="ui-mini">Aktualnie możliwość rejestracji jest wyłączona</div>
 				<div id="error" class="ui-mini error"></div>
 
@@ -51,6 +46,7 @@
 		<div data-role="header" class="ui-header">
 			<h1 class="ui-title">Lista testów</h1>
 			<button id="refresh" class="ui-btn ui-icon-refresh ui-btn-icon-notext ui-corner-all ui-btn-right">odśwież</button>
+			<a href="index.html" class="ui-btn ui-icon-back ui-btn-icon-notext ui-btn-left ui-corner-all"></a>
 		</div>
 
 		<div class="ui-body">
@@ -73,8 +69,27 @@
 	<!-- page_test -->
 	<div data-role="page" id="page_test">
 
+		<div id="question" class="ui-body ui-body-a"></div>
 
+		<div id="answers" data-role="controlgroup"></div>
 
+		<div data-role="footer" data-position="fixed" class="ui-footer">
+			<h1 class="ui-title" id="counter"></h1>
+			<button id="check" class="ui-btn-active ui-btn-left">Sprawdź</button>
+			<button id="next" class="ui-btn-right">Następne</button>
+		</div>
+
+	</div>
+
+	<!-- page_finish -->
+
+	<div data-role="page" id="page_finish">
+		<div class="ui-body">
+			<h1>Gratulacje!</h1>
+			<p>Istnieje wysokie prawdopodobieństwo zdania :)</p>
+			<img src="img/cat.jpg" style="width:100%; height:auto;">
+			<a href="#page_list" class="ui-btn ui-btn-active ui-corner-all ui-shadow">Wróć do listy testów</a>
+		</div>
 	</div>
 
 </body>

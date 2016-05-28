@@ -6,10 +6,7 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
-import android.webkit.WebChromeClient;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
+import android.webkit.*;
 import android.widget.RelativeLayout;
 
 public class MainActivity extends AppCompatActivity {
@@ -21,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web_view);
+
+        CookieManager.setAcceptFileSchemeCookies(true);
 
         webView = (WebView) findViewById(R.id.webView);
 
